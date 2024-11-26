@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Metatags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+        <meta name="language" content="Portuguese">
+        <meta name="description" content="...">
+        <meta name="keywords" content="...">
+        <meta name="author" content="...">
+        <meta name="robots" content="follow, index">
+
+        <!-- Social Metatags -->
+        <meta property="og:title" content="...">
+        <meta property="og:description" content="...">
+        <meta property="og:image" content="...">
+        <meta property="og:url" content="...">
+        <meta property="og:type" content="...">
+        <meta property="og:locale" content="pt_BR">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <!-- Title -->
+        <title>Cálculo de Combustível</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="styles/grid.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/field.css">
+        <link rel="stylesheet" href="styles/termometer.css">
+
+        <!-- Scrpts -->
+        <script defer src="scripts/jquery.js"></script>
+        <script defer src="scripts/jquery_mask.js"></script>
+        <script defer src="scripts/protect.js"></script>
+        <script defer src="scripts/calcs.js"></script>
+    </head>
+    <body>
+        
+        <!-- Main -->
+        <main class="protected">
+            <section data-grid="1">
+                <h1>Cálculo de Combustível</h1>
+                <p>Você recebrá o resultado do cálculo do consumo de combustível que será ou foi gasto.</p>
+            </section>
+            <section data-grid="3" style="margin-top: 30px;">
+                <div class="field">
+                    <label for="calc-distance">Distância percorrida</label>
+                    <p>Entre o valor da distância percorrida em <b>KM's</b>.</p>
+                    <input id="calc-distance" class="number-mask" type="text" placeholder="0">
+                    <span id="calc-distance-error">Erro</span>
+                </div>
+                <div class="field">
+                    <label for="calc-consume">Consumo médio do veículo</label>
+                    <p>Entre o valor do consumo médio em <b>KM's / Litro</b>.</p>
+                    <input id="calc-consume" class="number-mask" type="text" placeholder="0">
+                    <span id="calc-consume-error">Erro</span>
+                </div>
+                <div class="field">
+                    <label for="calc-price">Preço do combustível</label>
+                    <p>Entre o valor do preço do <b>Combustível / Litro</b>.</p>
+                    <input id="calc-price" class="money-mask" type="text" placeholder="R$ 0,00">
+                    <span id="calc-price-error">Erro</span>
+                </div>
+            </section>
+            <section data-grid="1">
+                <div class="field-row">
+                    <button id="calc-submit" type="button">Calcular</button>
+                    <button id="calc-clear" type="button">Limpar</button>
+                </div>
+            </section>
+            <section data-grid="1" style="margin-top: 15px; padding-top: 20px; border-top: 2px dashed #ddd;">
+                <h1>Resultado</h1>
+            </section>
+            <section data-grid="3">
+                <div class="field">
+                    <label for="result-distance">Consumo total de combustível</label>
+                    <p>A quantidade total de combustível consumida na viagem ou período analisado.</p>
+                    <input id="result-distance" type="text" readonly>
+                </div>
+                <div class="field">
+                    <label for="result-cost">Custo total do percurso</label>
+                    <p>O valor total gasto com combustível ao final do caminho percorrido.</p>
+                    <input id="result-cost" type="text" readonly>
+                </div>
+                <div class="field">
+                    <label for="result-costPerKm">Custo por quilômetro</label>
+                    <p>O valor gasto em combustível para percorrer cada quilômetro.</p>
+                    <input id="result-costPerKm" type="text" readonly>
+                </div>
+            </section>
+            <section data-grid="1">
+                <div class="field">
+                    <label for="result-termometer">Termômetro de consumo</label>
+                    <p>Aqui indicará a você, se está viável o consumo ou está elevado.</p>
+                    <div class="termometer-grid">
+                        <div id="result-termometer" class="termometer" type="text"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </body>
+</html>

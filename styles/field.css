@@ -1,0 +1,59 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    > label {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    > input {
+        font-size: 18px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    > input:read-only {
+        background-color: #f9f9f9;
+    }
+
+    > p, b {
+        font-size: 15px;
+        color: #777;
+        font-weight: 500;
+    }
+
+    > p > b {
+        color: darkblue;
+        font-weight: 600 !important;
+    }
+
+    > span {
+        display: none;
+        font-size: 15px;
+        color: red;
+    }
+}
+
+.field-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.field,
+.field-row {
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+        width: fit-content;
+        border: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+    }
+}
